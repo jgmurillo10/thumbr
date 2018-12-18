@@ -97,11 +97,15 @@
   '. vote .'
   'results results results';
   grid-template-rows: 40% repeat(5,auto);
+  column-gap: 5px;
 
-  grid-template-columns: 5% auto 10%;
+  grid-template-columns: 6% auto 10%;
 
   &__icon-result {
+    background: $upvote-color;
     grid-area: icon-result;
+    align-self: baseline;
+    padding: 5px;
   }
 
   &__name {
@@ -110,6 +114,7 @@
     color: rgb(255, 255, 255);
     line-height: 1.067;
     text-align: left;
+    align-self: baseline;
   }
 
   &__description {
