@@ -134,12 +134,12 @@ const Celebrity = ({ name, img, description, date, category, upvotes, downvotes 
     </div>
     <div className="celebrity__results">
       <div className="celebrity__up">
-        <img src={require('./../../assets/imgs/up.png')} alt="upvote"/>
+        <img className="celebrity__icon" src={require('./../../assets/imgs/up.png')} alt="upvote"/>
         { upvotes }%
       </div>
       <div className="celebrity__down">
         { downvotes }%
-        <img src={require('./../../assets/imgs/down.png')} alt="upvote"/>
+        <img className="celebrity__icon" src={require('./../../assets/imgs/down.png')} alt="upvote"/>
       </div>
     </div>
       

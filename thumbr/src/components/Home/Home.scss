@@ -84,30 +84,28 @@
 }
 
 .celebrity {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Kanye_West_at_the_2009_Tribeca_Film_Festival.jpg/220px-Kanye_West_at_the_2009_Tribeca_Film_Festival.jpg"), linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+  // background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Kanye_West_at_the_2009_Tribeca_Film_Festival.jpg/220px-Kanye_West_at_the_2009_Tribeca_Film_Festival.jpg"), linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
   background-size: cover;
-  // background: linear-gradient(to top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
   min-height: 900px;
   color: white;
-  border: 5px solid black;
   display: grid;
-  grid-template-areas: '. .'
-  'icon-result name'
-  '. date-category'
-  '. description'
-  '. vote'
-  '. results';
-  grid-template-rows: 50% repeat(10%, 5);
-  grid-template-columns: 10% 90%;
+  grid-template-areas: '. . .'
+  'icon-result name .'
+  '. date-category .'
+  '. description .'
+  '. vote .'
+  'results results results';
+  grid-template-rows: 40% repeat(5,auto);
+
+  grid-template-columns: 5% auto 10%;
 
   &__icon-result {
-    grid-area: 'icon-result';
-    border: 1px solid white;
+    grid-area: icon-result;
   }
 
   &__name {
-    border: 1px solid white;
-    grid-area: 'name';
+    grid-area: name;
     font-size: 2.81em;
     color: rgb(255, 255, 255);
     line-height: 1.067;
@@ -115,39 +113,47 @@
   }
 
   &__description {
-    border: 1px solid white;
-    grid-area: 'description';
+    grid-area: description;
     color: rgb(255, 255, 255);
     line-height: 1.2;
-    text-align: left;
     
   }
 
   &__date-category {
-    border: 1px solid white;
-    grid-area: 'date-category';
+    grid-area: date-category;
   }
 
   &__vote {
-    grid-area: 'vote';
-    border: 1px solid white;
+    grid-area: vote;
   }
 
   &__results {
-    grid-area: 'results';
+    grid-area: results;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    align-content: center;
+    font-weight: 300;
+    font-size: 1.7em;
   }
 
   &__up {
     background: $upvote-color;
     flex-grow: 1;
+    display: flex;
+    align-items: center;
   }
+
 
   &__down {
     background: $downvote-color;
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__icon {
+    padding: 10px;
   }
 }
 
