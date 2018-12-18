@@ -1,0 +1,183 @@
+.pope {
+  // background-color: lightblue;
+  // background: url(/src/assets/imgs/pope.png);
+  background: url('https://i.ibb.co/SvY8DFT/pope.png') no-repeat;
+  background-size: cover;
+  min-height: 40vh; 
+  background-color: lightblue;
+  padding-top: $menu-height;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: $padding;
+}
+
+.big-box {
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+  padding: 5%;
+
+  &__name {
+    font-size: 3.75em;
+    font-weight: 500;
+  }
+
+  &__description {
+    font-size: 1.3em;
+    font-weight: 300;
+  }
+
+  &__info {
+    font-size: 14pt;
+    font-weight: 300;
+  }
+
+  &__veredict {
+    font-size: 20pt;
+    font-weight: 700;
+  }
+
+  &__votes {
+    display: flex;
+    height: 80px;
+  }
+
+  &__up {
+    flex-grow: 1;
+    background-color: $upvote-color;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    
+  }
+   &__down {
+    flex-grow: 1;
+    background-color: $downvote-color;
+   }
+
+   &__up, &__down {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+   }
+}
+
+.home {
+}
+
+.celebrities {
+  padding-left: $padding;
+  padding-right: $padding;
+  &__title {
+    font-size: 2.5em;
+    font-weight: 300;
+  }
+  &__footer {
+    display: flex;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 3em;
+    row-gap: 3em;
+  }
+}
+
+.celebrity {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Kanye_West_at_the_2009_Tribeca_Film_Festival.jpg/220px-Kanye_West_at_the_2009_Tribeca_Film_Festival.jpg"), linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+  background-size: cover;
+  // background: linear-gradient(to top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+  min-height: 900px;
+  color: white;
+  border: 5px solid black;
+  display: grid;
+  grid-template-areas: '. .'
+  'icon-result name'
+  '. date-category'
+  '. description'
+  '. vote'
+  '. results';
+  grid-template-rows: 50% repeat(10%, 5);
+  grid-template-columns: 10% 90%;
+
+  &__icon-result {
+    grid-area: 'icon-result';
+    border: 1px solid white;
+  }
+
+  &__name {
+    border: 1px solid white;
+    grid-area: 'name';
+    font-size: 2.81em;
+    color: rgb(255, 255, 255);
+    line-height: 1.067;
+    text-align: left;
+  }
+
+  &__description {
+    border: 1px solid white;
+    grid-area: 'description';
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: left;
+    
+  }
+
+  &__date-category {
+    border: 1px solid white;
+    grid-area: 'date-category';
+  }
+
+  &__vote {
+    grid-area: 'vote';
+    border: 1px solid white;
+  }
+
+  &__results {
+    grid-area: 'results';
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+  }
+
+  &__up {
+    background: $upvote-color;
+    flex-grow: 1;
+  }
+
+  &__down {
+    background: $downvote-color;
+    flex-grow: 1;
+  }
+}
+
+.message {
+  // padding-left: $padding;
+  margin: 2em $padding;
+  display: grid;
+  background-color: rgb(235, 235, 235);
+  grid-template-columns: 20% auto 5%;
+  padding: 1em;
+
+  &__titles {
+    line-height: 0;
+  }
+  &__title-1 {
+    font-weight: 300;
+    font-size: 1.32em;
+  }
+  &__title-2 {
+    font-weight: 700;
+    font-size: 2.3em;
+  }
+  &__text {
+    font-weight: 300;
+  }
+  &__button {
+    cursor: pointer;
+    font-size: 2em;
+    display: grid;
+    align-content: center;
+    justify-content: center; 
+  }
+}
