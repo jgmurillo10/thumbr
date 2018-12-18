@@ -1,0 +1,49 @@
+.big-box {
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+  padding: 5%;
+
+  &__name {
+    font-size: 3.75em;
+    font-weight: 500;
+  }
+
+  &__description {
+    font-size: 1.3em;
+    font-weight: 300;
+  }
+
+  &__info {
+    font-size: 14pt;
+    font-weight: 300;
+  }
+
+  &__veredict {
+    font-size: 20pt;
+    font-weight: 700;
+  }
+
+  &__votes {
+    display: flex;
+    height: 80px;
+  }
+
+  &__up {
+    flex-grow: 1;
+    background-color: $upvote-color;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    
+  }
+   &__down {
+    flex-grow: 1;
+    background-color: $downvote-color;
+   }
+
+   &__up, &__down {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+   }
+}

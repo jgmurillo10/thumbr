@@ -1,0 +1,30 @@
+.message {
+  // padding-left: $padding;
+  margin: 2em $padding;
+  display: grid;
+  background-color: rgb(235, 235, 235);
+  grid-template-columns: 20% auto 5%;
+  padding: 1em;
+
+  &__titles {
+    line-height: 0;
+  }
+  &__title-1 {
+    font-weight: 300;
+    font-size: 1.32em;
+  }
+  &__title-2 {
+    font-weight: 700;
+    font-size: 2.3em;
+  }
+  &__text {
+    font-weight: 300;
+  }
+  &__button {
+    cursor: pointer;
+    font-size: 2em;
+    display: grid;
+    align-content: center;
+    justify-content: center; 
+  }
+}

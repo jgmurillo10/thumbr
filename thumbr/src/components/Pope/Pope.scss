@@ -1,0 +1,10 @@
+.pope {
+  background: url('https://i.ibb.co/SvY8DFT/pope.png') no-repeat;
+  background-size: cover;
+  min-height: 40vh; 
+  background-color: lightblue;
+  padding-top: $menu-height;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: $padding;
+}
