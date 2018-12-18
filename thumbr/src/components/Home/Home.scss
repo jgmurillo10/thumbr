@@ -121,10 +121,49 @@
 
   &__date-category {
     grid-area: date-category;
+    font-size: 0.75em;
   }
 
   &__vote {
     grid-area: vote;
+    display: flex;
+
+    &__upvote {
+      background: $upvote-color;
+    }
+
+    &__downvote {
+      background: $downvote-color;
+
+    }
+
+    &__upvote, &__downvote {
+      margin-right: 0.5em;
+      height: 2em;
+      width: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // flex-grow: 1;
+    }
+
+    &__upvote > img, &__downvote > img {
+      height: 1.5em;
+    }
+
+    &__vote {
+        border-width: 1px;
+        border-color: rgb(255, 255, 255);
+        border-style: solid;
+        background-color: rgba(0, 0, 0, 0.149);
+        font-size: 14pt;
+        width: 7em;
+        height: 2.2em;
+        z-index: 77;
+        color: white;
+        // padding: 1em;
+      
+    }
   }
 
   &__results {

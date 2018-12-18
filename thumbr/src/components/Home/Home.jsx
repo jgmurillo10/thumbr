@@ -125,12 +125,18 @@ const Celebrity = ({ name, img, description, date, category, upvotes, downvotes 
       <img src={require('./../../assets/imgs/up.png')} alt="upvote"/>
     </div>
     <h3 className="celebrity__name">{ name }</h3>
-    <p className="celebrity__date-category">{ date } in { category }</p>
-    <p className="celebrity__description">{description}</p>
+    <p className="celebrity__date-category"><span className="bold">{ date }</span> in { category }</p>
+    <p className="celebrity__description light">{description}</p>
     <div className="celebrity__vote">
-      <img src={require('./../../assets/imgs/up.png')} alt="upvote"/>
-      <img src={require('./../../assets/imgs/down.png')} alt="upvote"/>
-      <button>Vote now</button>
+      <div className="celebrity__vote__upvote">
+        <img src={require('./../../assets/imgs/up.png')} alt="upvote"/>
+      </div>
+      <div className="celebrity__vote__downvote">
+        <img src={require('./../../assets/imgs/down.png')} alt="upvote"/>
+      </div>
+      <div>
+        <button className="celebrity__vote__vote">Vote now</button>
+      </div>
     </div>
     <div className="celebrity__results">
       <div className="celebrity__up">
