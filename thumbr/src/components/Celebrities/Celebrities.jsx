@@ -2,7 +2,7 @@ import React from 'react';
 import CelebrityBase from './../Celebrity';
 import { withFirebase } from '../Firebase';
 
-const Celebrities = ({ celebrities }) =>  (
+const Celebrities = ({ celebrities, update }) =>  (
   <div className="celebrities">
     <h1 className="celebrities__title">Previous Rulings</h1>
     <div className="celebrities__container">
@@ -11,6 +11,7 @@ const Celebrities = ({ celebrities }) =>  (
           const { id, img, name, description, date, category, votes } = celebrity;
           return (
             <Celebrity
+              update={update}
               key={id}
               id={id}
               name={name}

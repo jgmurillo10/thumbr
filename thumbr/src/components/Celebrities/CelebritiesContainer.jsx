@@ -6,6 +6,10 @@ class CelebritiesContainer extends Component {
   }
 
   componentDidMount() {
+    this.updateCelebs();
+  }
+
+  updateCelebs() {
     let celebs = [];
     this.props.firebase.db.collection("celebrities").get().then((query) => {
       query.forEach((snap) => {
@@ -18,7 +22,7 @@ class CelebritiesContainer extends Component {
 
   render() {
     return  (
-      <Celebrities celebrities={this.state.celebrities} />
+      <Celebrities update={() => this.updateCelebs()} celebrities={this.state.celebrities} />
     )
   }
 }

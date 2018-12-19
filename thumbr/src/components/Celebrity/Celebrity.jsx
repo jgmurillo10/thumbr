@@ -18,6 +18,7 @@ class Celebrity extends Component {
       this.props.firebase.db.collection("celebrities").doc(id).update(docData).then(function(){
         console.log('doc written');
       })
+      this.props.update();
     }
   }
   resetVote() {
