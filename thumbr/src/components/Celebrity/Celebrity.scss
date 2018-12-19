@@ -15,10 +15,18 @@
   grid-template-columns: 6% auto 10%;
 
   &__icon-result {
-    background: $upvote-color;
     grid-area: icon-result;
     align-self: baseline;
-    padding: 5px;
+    &__up {
+      background: $upvote-color;
+    }
+    &__down {
+      background: $downvote-color;
+    }
+
+    &__up, &__down {
+      padding: 8px;
+    }
   }
 
   &__name {

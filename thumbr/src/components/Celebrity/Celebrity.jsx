@@ -31,7 +31,14 @@ class Celebrity extends Component {
     return (
       <div className="celebrity" style={{ backgroundImage : `url(${img}), linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)`, backgroundSize: 'cover' }}>
         <div className="celebrity__icon-result">
-          <img src={require('./../../assets/imgs/up.png')} alt="upvote"/>
+          {
+            upPercentage >= 50 
+            ?
+            <img className="celebrity__icon-result__up" src={require('./../../assets/imgs/up.png')} alt="upvote"/>
+            :
+            <img className="celebrity__icon-result__down" src={require('./../../assets/imgs/down.png')} alt="downvote"/>
+          }
+          
         </div>
         <h3 className="celebrity__name">{ name }</h3>
         <p className="celebrity__date-category"><span className="bold">{ date }</span> in { category }</p>
