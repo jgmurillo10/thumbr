@@ -56,11 +56,11 @@ class Celebrity extends Component {
         }
         
         <div className="celebrity__results">
-          <div className="celebrity__up">
+          <div className="celebrity__up" style={{ width: `${upPercentage}%`}}>
             <img className="celebrity__icon" src={require('./../../assets/imgs/up.png')} alt="upvote"/>
             { upPercentage }%
           </div>
-          <div className="celebrity__down">
+          <div className="celebrity__down" style={{ width: `${downPercentage}%`}}>
             { downPercentage }%
             <img className="celebrity__icon" src={require('./../../assets/imgs/down.png')} alt="upvote"/>
           </div>

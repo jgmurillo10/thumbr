@@ -99,14 +99,12 @@
 
   &__up {
     background: $upvote-color;
-    flex-grow: 1;
     display: flex;
     align-items: center;
   }
 
   &__down {
     background: $downvote-color;
-    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
