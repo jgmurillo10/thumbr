@@ -1,5 +1,6 @@
 import React from 'react';
-import Celebrity from './../Celebrity';
+import CelebrityBase from './../Celebrity';
+import { withFirebase } from '../Firebase';
 
 const Celebrities = ({ celebrities }) =>  (
   <div className="celebrities">
@@ -7,17 +8,18 @@ const Celebrities = ({ celebrities }) =>  (
     <div className="celebrities__container">
       {
         celebrities.map(celebrity => {
-          const { id, img, name, description, date, category, upvotes, downvotes } = celebrity;
+          const { id, img, name, description, date, category, votes } = celebrity;
           return (
             <Celebrity
               key={id}
+              id={id}
               name={name}
               description={description}
               img={img}
               date={date}
               category={category}
-              upvotes={upvotes}
-              downvotes={downvotes}
+              up={votes.up}
+              down={votes.down}
             />
           )
         })
@@ -33,5 +35,7 @@ const Celebrities = ({ celebrities }) =>  (
     </div>
   </div>
 );
+
+const Celebrity = withFirebase(CelebrityBase);
 
 export default Celebrities;
