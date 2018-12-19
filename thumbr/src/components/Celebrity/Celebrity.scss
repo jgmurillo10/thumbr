@@ -1,16 +1,15 @@
 .celebrity {
-  background-size: cover;
-  // background: linear-gradient(to top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
   min-height: 900px;
   color: white;
   display: grid;
+  margin-right: 5%;
   grid-template-areas: '. . .'
   'icon-result name .'
   '. date-category .'
   '. description .'
   '. vote .'
   'results results results';
-  grid-template-rows: 40% repeat(5,auto);
+  grid-template-rows: 30%  20% repeat(3,auto) 10%;
   column-gap: 5px;
   grid-template-columns: 6% auto 10%;
 

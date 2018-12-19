@@ -25,12 +25,12 @@ const Celebrities = ({ celebrities }) =>  (
         })
       }
     </div>
-    <div className="celebrities__footer">
-      <div>
-        Is there anyone else yoy would want ud to add?
-      </div>
-      <div>
-        <button>Submit a Name</button>
+    <div className="celebrities__background">
+      <div className="celebrities__footer">
+        <div className="celebrities__footer__title">
+          Is there anyone else yoy would want ud to add?
+        </div>
+        <button className="celebrities__footer__button">Submit a Name</button>
       </div>
     </div>
   </div>

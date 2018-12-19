@@ -1,3 +1,18 @@
 .footer {
-  border: 1px solid black;
+  padding: $padding;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 300;
+  font-size: 0.75em;
+  &__company {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__social {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;  
+  }
 }

@@ -12,7 +12,41 @@
   &__container {
     display: grid;
     grid-template-columns: 50% 50%;
-    column-gap: 3em;
-    row-gap: 3em;
+    grid-row-gap: 3em;
+  }
+
+  &__background {
+    background: url('https://firebasestorage.googleapis.com/v0/b/zemoga-ui.appspot.com/o/footer_background.png?alt=media&token=cb6b92de-0c66-4a07-bd4a-6018ceab4c62');
+    margin-right: 2.5%;
+  }
+
+  &__footer {
+    // background-blend-mode: saturation;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1em;
+    margin-top: 3em;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    &__title {
+      font-weight: 300;
+      font-size: 1.87em;
+      align-self: center;
+
+    }
+    &__button {
+      border-width: 3px;
+      border-color: rgb(51, 51, 51);
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 0.149);
+      width: 10em;
+      // height: 2.4em;
+      color: black;
+      font-size: 20pt;
+      cursor: pointer;
+      padding: 1em;
+
+       
+    }
   }
 }
