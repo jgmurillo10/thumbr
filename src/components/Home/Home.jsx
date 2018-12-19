@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Pope from './../Pope';
 import Message from './../Message';
 import CelebritiesContainer from './../Celebrities';

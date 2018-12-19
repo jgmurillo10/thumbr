@@ -4,6 +4,7 @@ class Celebrity extends Component {
     selected: '',
     voted: false,
   }
+
   vote(id, up, down) {
     this.state.selected === 'up' ? up++ : down++;
     console.log(this.state.selected, up, down);
@@ -21,9 +22,11 @@ class Celebrity extends Component {
       this.props.update();
     }
   }
+
   resetVote() {
     this.setState({ voted: false });
   }
+  
   render() {
     const { id, name, img, description, date, category, up, down } = this.props;
     const upPercentage = Math.round(up / (up+down)*100 * 100) / 100;

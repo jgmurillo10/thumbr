@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CelebrityBig = ({ name, description, link, upvotes, downvotes }) => (
+const CelebrityBig = ({ name, description, link }) => (
   <div>
     <div className="big-box">
       <p className="light">What's your opinion on</p>
