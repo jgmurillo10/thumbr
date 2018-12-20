@@ -1,5 +1,5 @@
 .celebrity {
-  min-height: 900px;
+  height: 100vh;
   color: white;
   display: grid;
   grid-template-areas: '. . .'
@@ -12,6 +12,12 @@
   grid-column-gap: 1em;
   grid-row-gap: 1em;
   grid-template-columns: 6% auto 10%;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: right; 
 
   &__icon-result {
     grid-area: icon-result;
@@ -84,13 +90,12 @@
         border-color: rgb(255, 255, 255);
         border-style: solid;
         background-color: rgba(0, 0, 0, 0.149);
-        font-size: 14pt;
+        font-size: 0.875em;
         width: 7em;
         height: 2.4em;
         z-index: 77;
         color: white;
         cursor: pointer;
-        // padding: 1em;
       
     }
   }
@@ -119,5 +124,15 @@
 
   &__icon {
     padding: 10px;
+  }
+
+  @media only screen and (max-width: $break-xs) {
+    background-position: right; 
+
+    &__icon-result {
+      &__up, &__down {
+        padding: 3px;
+      }
+    }
   }
 }
