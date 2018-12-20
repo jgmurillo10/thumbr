@@ -1,7 +1,7 @@
 {
   "main.css": "/thumbr/static/css/main.b1bd64ab.chunk.css",
-  "main.js": "/thumbr/static/js/main.3da114f5.chunk.js",
-  "main.js.map": "/thumbr/static/js/main.3da114f5.chunk.js.map",
+  "main.js": "/thumbr/static/js/main.555c7cac.chunk.js",
+  "main.js.map": "/thumbr/static/js/main.555c7cac.chunk.js.map",
   "static/js/1.cefcd05e.chunk.js": "/thumbr/static/js/1.cefcd05e.chunk.js",
   "static/js/1.cefcd05e.chunk.js.map": "/thumbr/static/js/1.cefcd05e.chunk.js.map",
   "runtime~main.js": "/thumbr/static/js/runtime~main.8466b800.js",
@@ -9,6 +9,6 @@
   "static/media/search.svg": "/thumbr/static/media/search.d3894308.svg",
   "static/css/main.b1bd64ab.chunk.css.map": "/thumbr/static/css/main.b1bd64ab.chunk.css.map",
   "index.html": "/thumbr/index.html",
-  "precache-manifest.1d63f06ee525824e288c70d209339828.js": "/thumbr/precache-manifest.1d63f06ee525824e288c70d209339828.js",
+  "precache-manifest.2d57202e46f5e92a5021566b906f8f99.js": "/thumbr/precache-manifest.2d57202e46f5e92a5021566b906f8f99.js",
   "service-worker.js": "/thumbr/service-worker.js"
 }
