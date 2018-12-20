@@ -17,9 +17,15 @@
     }
   } 
 
+
   @media only screen and (min-width: $break-xl) {
     grid-template-columns: 25% auto 5%;
     grid-template-areas: 'titles texts button';
+  }
+
+  @media only screen and (max-width: 1640px) {
+    border: 1px solid black;
+    font-size: 14pt;
   }
 
   @media only screen and (max-width: $break-xs) {
@@ -28,6 +34,7 @@
     grid-template-areas: 'titles titles button'
     'texts texts texts';
     margin: 1em 0;
+    
     &__button {
       padding-right: 1em;
     }
