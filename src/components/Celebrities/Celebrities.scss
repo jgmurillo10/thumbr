@@ -6,7 +6,11 @@
     font-size: 2.5em;
     font-weight: 300;
   }
-
+  &__loader {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-row-gap: 1em;
+  }
   &__container {
     display: grid;
     grid-template-columns: 50% 50%;
