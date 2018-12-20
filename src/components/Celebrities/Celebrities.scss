@@ -1,25 +1,19 @@
 .celebrities {
   padding-left: $padding;
   padding-right: $padding;
+
   &__title {
     font-size: 2.5em;
     font-weight: 300;
-  }
-  &__footer {
-    display: flex;
   }
 
   &__container {
     display: grid;
     grid-template-columns: 50% 50%;
-    @media screen and (max-width: $break-xs) {
-      grid-template-columns: 100%;
-      border: 10px solid black;
-    }
     grid-row-gap: 1em;
     // TODO fix column gap at the end
     grid-column-gap: 2em;
-    border: 1px solid black;
+    // border: 1px solid black;
   }
 
   &__background {
@@ -27,12 +21,12 @@
   }
 
   &__footer {
-    // background-blend-mode: saturation;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1em;
     margin-top: 3em;
     display: flex;
     justify-content: space-between;
+
     &__title {
       font-weight: 300;
       font-size: 1.87em;
@@ -45,13 +39,28 @@
       border-style: solid;
       background-color: rgba(255, 255, 255, 0.149);
       width: 10em;
-      // height: 2.4em;
       color: black;
       font-size: 20pt;
       cursor: pointer;
       padding: 1em;
 
        
+    }
+  }
+
+  @media screen and (max-width: $break-xs) {
+    padding: 0;
+    &__container {
+      grid-template-columns: 100%;
+    }
+
+    &__footer {
+      display: grid;
+      justify-items: center;
+      &__title {
+        text-align: center;
+        margin-bottom: 1em;
+      }
     }
   }
 }
