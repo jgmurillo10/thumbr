@@ -11,19 +11,19 @@
 
   &__container {
     display: grid;
-    @media screen and (max-width: $break-small) {
+    grid-template-columns: 50% 50%;
+    @media screen and (max-width: $break-xs) {
       grid-template-columns: 100%;
       border: 10px solid black;
     }
-    @media screen and (min-width: $break-large) {
-      grid-template-columns: 50% 50%;
-    }
-    grid-row-gap: 3em;
+    grid-row-gap: 1em;
+    // TODO fix column gap at the end
+    grid-column-gap: 2em;
+    border: 1px solid black;
   }
 
   &__background {
     background: url('https://firebasestorage.googleapis.com/v0/b/zemoga-ui.appspot.com/o/footer_background.png?alt=media&token=cb6b92de-0c66-4a07-bd4a-6018ceab4c62');
-    margin-right: 2.5%;
   }
 
   &__footer {

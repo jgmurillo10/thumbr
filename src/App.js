@@ -34,7 +34,6 @@ class App extends Component {
       <Router>
         <div>
           <Menu brand={brand} items={items}/>
-  
           <Route exact path="/" component={Home} />
           <Route path="/trials" component={Trials} />
           <Route path="/about" component={About} />

@@ -1,9 +1,39 @@
 $menu-height: 150px;
 $padding: 10%;
 $font-size: 16pt;
-$break-small: 320px;
-$break-large: 1200px;
+
+$break-xs: 600px;
+$break-m: 768px;
+$break-l: 992px;
+$break-xl: 1200px;
 
 ul {
   list-style-type: none;
+}
+
+@mixin font-size() {
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    font-size: 12pt;
+  } 
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    font-size: 12pt;
+  } 
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    font-size: 14pt;
+  } 
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    font-size: 16pt;
+  } 
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    font-size: 20pt;
+  }
 }
