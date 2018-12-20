@@ -33,7 +33,7 @@ class Celebrity extends Component {
     const downPercentage = Math.round(down / (up+down)*100 * 100) / 100;
     
     return (
-      <div className="celebrity" style={{ backgroundImage : `linear-gradient( to bottom, rgba(0,0,0,0) 0%, rgba(51,51,51,0.52941) 49%, rgba(0,0,0,0.8) 100%), url(${img})`, backgroundSize: 'cover' }}>
+      <div className="celebrity" style={{ backgroundImage : `linear-gradient( to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 49%, rgba(0,0,0,0.8) 100%), url(${img})`, backgroundSize: 'cover' }}>
         <div className="celebrity__icon-result">
           {
             upPercentage >= 50 
