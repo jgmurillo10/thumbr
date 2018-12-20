@@ -18,7 +18,10 @@
   -o-background-size: cover;
   background-size: cover;
   background-position: right; 
-
+  &__message{
+    color: black;
+    margin: 2em;
+  }
   &__icon-result {
     grid-area: icon-result;
     align-self: baseline;

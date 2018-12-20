@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ContentLoader from 'react-content-loader'
 import CelebrityBase from './../Celebrity';
 import { withFirebase } from '../Firebase';
+import Modal from './../Modal';
+import AddCelebrity from './AddCelebrity';
 
 const MyLoader = props => (
 	<ContentLoader 
@@ -24,45 +26,63 @@ const MyLoader = props => (
 );
 const loaders = new Array(5).fill(0);
 
-const Celebrities = ({ celebrities, update }) =>  (
-  <div className="celebrities">
-    <h1 className="celebrities__title">Votes</h1>
-    <div className="celebrities__container">
-      {
-        celebrities.length ? 
-        celebrities.map(celebrity => {
-          const { id, img, name, description, date, category, votes } = celebrity;
-          return (
-            <Celebrity
-              update={update}
-              key={id}
-              id={id}
-              name={name}
-              description={description}
-              img={img}
-              date={date}
-              category={category}
-              up={votes.up}
-              down={votes.down}
-            />
-          )
-        })
-        : 
-        loaders.map(d => (
-          <MyLoader />
-        ))
-      }
-    </div>
-    <div className="celebrities__background">
-      <div className="celebrities__footer">
-        <div className="celebrities__footer__title">
-          Is there anyone else yoy would want ud to add?
+class Celebrities extends Component {
+  state = {
+    open: false
+  }
+  showModal = () => {
+    this.setState({ show: true });
+  }
+  
+  hideModal = () => {
+    this.setState({ show: false });
+  }
+  render() {
+    const { celebrities, update } = this.props;
+    return (
+      <div className="celebrities">
+        <h1 className="celebrities__title">Votes</h1>
+        <div className="celebrities__container">
+          {
+            celebrities.length ? 
+            celebrities.map(celebrity => {
+              const { id, img, name, description, date, category, votes } = celebrity;
+              return (
+                <Celebrity
+                  update={update}
+                  key={id}
+                  id={id}
+                  name={name}
+                  description={description}
+                  img={img}
+                  date={date}
+                  category={category}
+                  up={votes.up}
+                  down={votes.down}
+                />
+              )
+            })
+            : 
+            loaders.map((d, i) => (
+              <MyLoader key={i} />
+            ))
+          }
         </div>
-        <button className="celebrities__footer__button">Submit a Name</button>
+        <div className="celebrities__background">
+          <div className="celebrities__footer">
+            <Modal show={this.state.show} handleClose={this.hideModal} >
+              <AddCelebrity update={this.props.update} />
+            </Modal>
+            <div className="celebrities__footer__title">
+              Is there anyone else yoy would want ud to add?
+            </div>
+            <button onClick={this.showModal} className="celebrities__footer__button">Submit a Name</button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-);
+    )
+  }
+} ;
 
 const Celebrity = withFirebase(CelebrityBase);
 

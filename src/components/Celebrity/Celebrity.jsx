@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import Modal from './../Modal';
+
 class Celebrity extends Component {
   state = {
     selected: '',
     voted: false,
+    show: false,
+  }
+  hideModal = () => {
+    this.setState({ show: false });
   }
 
   vote(id, up, down) {
     this.state.selected === 'up' ? up++ : down++;
-    console.log(this.state.selected, up, down);
     if (this.state.selected) {
       this.setState({ selected: '', voted: true });
       let docData = {
@@ -16,11 +21,20 @@ class Celebrity extends Component {
           down
         }
       }
-      this.props.firebase.db.collection("celebrities").doc(id).update(docData).then(function(){
-        console.log('doc written');
+      this.props.firebase.db.collection("celebrities").doc(id).update(docData)
+      .then(() => this.setState({ show: true }))
+      .catch(function(){
+        console.log('error voting');
       })
       this.props.update();
     }
+  }
+
+  getPercentage(item, total) {
+    if (total === 0){
+      return 50;
+    }
+    return Math.round(item / (total)*100 * 100) / 100;
   }
 
   resetVote() {
@@ -29,8 +43,8 @@ class Celebrity extends Component {
   
   render() {
     const { id, name, img, description, date, category, up, down } = this.props;
-    const upPercentage = Math.round(up / (up+down)*100 * 100) / 100;
-    const downPercentage = Math.round(down / (up+down)*100 * 100) / 100;
+    const upPercentage = this.getPercentage(up, up+down);
+    const downPercentage = this.getPercentage(down, up+down);
     
     return (
       <div className="celebrity" style={{ backgroundImage : `linear-gradient( to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 49%, rgba(0,0,0,0.8) 100%), url(${img})`, backgroundSize: 'cover' }}>
@@ -47,6 +61,9 @@ class Celebrity extends Component {
         <h3 className="celebrity__name">{ name }</h3>
         <p className="celebrity__date-category"><span className="bold">{ date }</span> in { category }</p>
         <p className="celebrity__description light">{description}</p>
+        <Modal show={this.state.show} handleClose={this.hideModal} >
+          <p className="celebrity__message">Thank you for voting!</p>
+        </Modal>
         {
           this.state.voted ?
           <div className="celebrity__vote">
