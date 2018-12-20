@@ -9,8 +9,12 @@ const Footer = () => (
     </div>
     <div className="footer__social">
       <div>Follow Us</div>
-      <div>Facebook</div>
-      <div>Twitter</div>
+      <div>
+        <img src={require('./../../assets/imgs/fb.png')} alt="facebook logo"/>        
+      </div>
+      <div>
+        <img src={require('./../../assets/imgs/twt.png')} alt="twitter logo"/>        
+      </div>
     </div>
   </div>
 );

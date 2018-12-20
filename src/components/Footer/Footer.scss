@@ -15,5 +15,15 @@
     display: flex;
     justify-content: space-between;  
   }
-
+  @media only screen and (max-width: $break-xs) {
+    padding: $padding 1em;
+    display: grid;
+    grid-row-gap: 4em;
+    &__company, &__social {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 2fr repeat(2, 1fr);
+      grid-column-gap: 3em;
+    }
+  }
 }
